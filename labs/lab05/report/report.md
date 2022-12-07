@@ -1,119 +1,135 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+﻿**РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ** 
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+**Факультет физико-математических и естественных наук Кафедра прикладной информатики и теории вероятностей** 
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+**ОТЧЕТ** 
 
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
----
+**ПО ЛАБОРАТОРНОЙ РАБОТЕ** № **5** 
 
-# Цель работы
+*дисциплина:  Архитектура Вычислительных Систем* 
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+Студент: Сидоренко Максим Алексеевич Группа:  НБИбд-02-22 
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+**МОСКВА** 2022  г. 
 
-# Задание
+**Цель работы: Приобретение практических навыков работы в Midnight Commander. Освоение инструкций языка ассемблера mov и int.** 
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+**Ход работы:** 
 
-# Теоретическое введение
+- **5.3.** 
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+  Откроем midnight commander 
 
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/1.png)
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/2.jpeg)
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
+- Пользуясь клавишами “вверх вниз и ENTER” перейдем в каталог ~/work/arch-pc 
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/3.jpeg)
 
-# Выполнение лабораторной работы
+- С помощью функциональной клавиши f7 создадим папку lab05 и перейдем в созданный каталог 
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001])
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/4.jpeg)
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){ #fig:001 width=70% }
+- Пользуясь строкой ввода и командой touch создадим файл lab5-1.asm 
 
-# Выводы
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/5.jpeg)
 
-Здесь кратко описываются итоги проделанной работы.
+- С помощью функциональной клавиши F4 откроем файл lab5- 1.asm для редактирования во встроенном редакторе. Как правило в качестве встроенного редактора Midnight Commander используется редактор nano  
 
-# Список литературы{.unnumbered}
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/6.jpeg)
 
-::: {#refs}
-:::
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/7.jpeg)
+
+- Введем текст программы из листинга 6.1, сохраним изменения и закроем файл  
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/8.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/7.jpeg)
+
+- С помощью функциональной клавиши F3 откроем файл lab5- 1.asm для просмотра, убедимся, что файл содержит текст 
+
+программы ![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/9.jpeg)
+
+- Оттранслируем текст программы lab5-1.asm в объектный файл. Выполнили компоновку объектного файла и запустили получившийся исполняемый файл. Программа выводит стороку ‘Введите строку’ и ожидает ввода с клавиатуру, На запрос введем ФИО
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/10.png)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/11.png)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/12.png)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/13.jpeg)
+
+- **5.3.1. Подключение внешнего файла in\_out.asm** 
+- Скачаем файл in\_out.asm со страницы курса ТУИС 
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/14.jpeg)
+
+- Подключаемый файл in\_out.asm должен лежать в том же каталоге, что и файл с программой, в которой он используется. В одной из панелей mc откроем каталог с файлом lab5-1.asm. В другой панели каталог с in\_out.asm. Скопируем файл in\_out.asm в каталог с файлом lab5-1.asm  
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/15.jpeg)
+
+- С помощью функциональной клавиши F6 создадим копию файла lab5-1.asm с именем lab5-2.asm. Выделим файл lab5- 1.asm, нажмем на клавишу F6, введем имя файла lab5-2.asm и нажмем на ENTER 
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/16.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/17.jpeg)
+
+- Исправим  текст  программы  в  файле  lab5-2.asm  с использованием  подпрограммы  из  внешнего  файла in\_out.asm(используем подпрограммы sprintLF, sread и quit) в соответствии  с  листингом  6.2. Создим  исполняемый  файл и проверим  его  работу ![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/18.jpeg)![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/19.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/20.png)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/21.png)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/22.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/23.jpeg)
+
+- В файле lab5-2.asm заменим подпрограмму sprintLF на sprint. Создадим исполняемый файл и проверим его работу.  
+
+Между ними видна разница в том, что sprintLF строку для ввода переносит вниз, а sprint на той же строке, где и указание ‘Введите строку’
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/24.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/25.jpeg)
+
+- 5.4. Самостоятельная работа
+- Создайте  копию  файла  lab6-1.asm.  Внесите  изменения  в программу  (без  использования  внешнего  файла  in\_out.asm), так чтобы она работала по следующему алгоритму: 
+- вывести приглашение типа “Введите строку:”;
+- ввести строку с клавиатуры; 
+- вывести  введённую  строку  на  экран.
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/26.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/27.jpeg)
+
+- Получим  исполняемый  файл  и  проверим  его  работу.  На приглашение введем строку своё имя и фамилию 
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/28.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/29.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/30.jpeg)
+
+- Создим копию файла lab6-2.asm. Исправим текст программы с использованием подпрограмм из внешнего файла in\_out.asm, так чтобы она работала по следующему алгоритму: 
+- вывести приглашение типа “Введите строку:”; 
+- ввести строку с клавиатуры; 
+- вывести введённую строку на экран. 
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/31.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/32.jpeg)
+
+- Создадим  исполняемый  файл  и  проверим  его  работу
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/33.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/34.jpeg)
+
+![](/home/masidorenko/work/study/2022-2023/Архитектура%20компьютера/arch-pc/labs/lab05/report/image/35.png)
+
+- **Вывод:  после  проделанной  работы,  я приобрел  практические  навыки  работы  в Midnight  commander.  Освоил  инструкции языка ассемблера mov и int** 
+
+**Cсылка на гитхаб  [https://github.com/MaximSidorenko/study_2022- 2023_arh-pc** ](https://github.com/MaximSidorenko/study_2022-2023_arh-pc)**
